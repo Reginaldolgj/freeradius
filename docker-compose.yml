@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  freeradius:
+    container_name: freeradius
+    restart: unless-stopped
+    image: freeradius/freeradius-server:latest
+    volumes:
+      - "/home/freeradius/clients.conf:/etc/raddb/clients.conf:ro"
+      - "/home/freeradius/users.conf:/etc/raddb/users.conf:ro"
+      - "/home/freeradius/ldap:/etc/raddb/mods-enabled/ldap:ro"
+      - "/home/freeradius/sites-enabled/:/etc/raddb/sites-enabled/:ro"
+      - "/home/freeradius/dictionary:/etc/raddb/dictionary:ro"
+    ports:
+      - "1812-1813:1812-1813/udp"
+    command: ["radiusd", "-X"]
