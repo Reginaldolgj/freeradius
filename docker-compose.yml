@@ -5,14 +5,14 @@ services:
     restart: unless-stopped
     image: freeradius/freeradius-server:latest
     volumes:
-      - "/home/docker/freeradius2/clients.conf:/etc/raddb/clients.conf:ro"
-      - "/home/docker/freeradius2/users.conf:/etc/raddb/users.conf:ro"
-      - "/home/docker/freeradius2/ldap:/etc/raddb/mods-enabled/ldap:ro"
-      - "/home/docker/freeradius2/default:/etc/raddb/sites-enabled/default:ro"
-      - "/home/docker/freeradius2/inner-tunnel:/etc/raddb/sites-enabled/inner-tunnel:ro"
-      - "/home/docker/freeradius2/dictionary:/etc/raddb/dictionary:ro"
-      - "/home/docker/freeradius2/set_group_vlan:/etc/raddb/policy.d/set_group_vlan:ro"
-      - "/home/docker/freeradius2/cache_auth:/etc/raddb/mods-available/cache_auth:ro"
+      - "/home/freeradius-docker-vlan/clients.conf:/etc/raddb/clients.conf:ro"
+      - "/home/freeradius-docker-vlan/users.conf:/etc/raddb/users.conf:ro"
+      - "/home/freeradius-docker-vlan/ldap:/etc/raddb/mods-enabled/ldap:ro"
+      - "/home/freeradius-docker-vlan/default:/etc/raddb/sites-enabled/default:ro"
+      - "/home/freeradius-docker-vlan/inner-tunnel:/etc/raddb/sites-enabled/inner-tunnel:ro"
+      - "/home/freeradius-docker-vlan/dictionary:/etc/raddb/dictionary:ro"
+      - "/home/freeradius-docker-vlan/set_group_vlan:/etc/raddb/policy.d/set_group_vlan:ro"
+      - "/home/freeradius-docker-vlan/cache_auth:/etc/raddb/mods-available/cache_auth:ro"
     ports:
       - "1812-1813:1812-1813/udp"
     command: [ "radiusd", "-X" ]
