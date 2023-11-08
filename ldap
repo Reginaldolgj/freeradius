@@ -1,10 +1,10 @@
 
 ldap {
 
-	server = '10.5.0.4'
+	server = '161.35.188.195'
 
 	identity = 'cn=admin,dc=example,dc=com'
-	password = '1234'
+	password = "2Vn']5J@jsmNjpM"
 
 	base_dn = 'dc=example,dc=com'
 
