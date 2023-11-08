@@ -11,7 +11,7 @@ services:
       - "/home/freeradius-docker-vlan/default:/etc/raddb/sites-enabled/default:ro"
       - "/home/freeradius-docker-vlan/inner-tunnel:/etc/raddb/sites-enabled/inner-tunnel:ro"
       - "/home/freeradius-docker-vlan/dictionary:/etc/raddb/dictionary:ro"
-      - "/home/freeradius-docker-vlan/set_group_vlan:/etc/raddb/policy.d/set_group_vlan:ro"
+    #  - "/home/freeradius-docker-vlan/set_group_vlan:/etc/raddb/policy.d/set_group_vlan:ro"
       - "/home/freeradius-docker-vlan/cache_auth:/etc/raddb/mods-available/cache_auth:ro"
     ports:
       - "1812-1813:1812-1813/udp"
