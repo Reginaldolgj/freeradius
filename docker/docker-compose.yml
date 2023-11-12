@@ -5,6 +5,7 @@ services:
     restart: unless-stopped
     image: freeradius/freeradius-server:latest
     volumes:
+      - "/home/docker-freeradius-ultimo/freeradius/docker/certs/:/etc/raddb/certs/:ro"
       - "/home/docker-freeradius-ultimo/freeradius/docker/clients.conf:/etc/raddb/clients.conf:ro"
       - "/home/docker-freeradius-ultimo/freeradius/docker/ldap:/etc/raddb/mods-enabled/ldap:ro"
       - "/home/docker-freeradius-ultimo/freeradius/docker/ldap:/etc/raddb/mods-enabled/cache_auth:ro"
